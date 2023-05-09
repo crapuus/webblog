@@ -14,7 +14,8 @@
 		"php": ">=5.3.7",
 		"vlucas/phpdotenv": "^5.5",
 		"jenssegers/blade": "^1.4",
-		"lulco/phoenix": "^2.3"
+		"lulco/phoenix": "^2.3",
+		"illuminate/database": "^8.83"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
@@ -34,5 +35,11 @@
 	"require-dev": {
 		"mikey179/vfsstream": "1.6.*",
 		"phpunit/phpunit": "4.* || 5.* || 9.*"
+	},
+
+	"autoload": {
+		"psr-4": {
+			"Orm\\": "application/orm/"
+		}
 	}
 }
