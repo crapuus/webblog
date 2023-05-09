@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Login extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,10 +18,25 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
-
 	public function index()
 	{
-		$this->load->view('template/backend/theme');
+		$login_salah ='';
+
+		if($this->input->post()){
+
+			$username = $this ->input ->post('username');
+			$password = $this ->input ->post('password');
+
+			if($username == 'uus' && $password == '123'){
+			redirect('backend/dashboard');
+			} else{
+			$login_salah ='kombinasi username & password salah';
+		}
+		}
+
+		
+
+		view('login', ['login_salah' => $login_salah]);
 
 	}
 
